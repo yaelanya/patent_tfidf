@@ -1,6 +1,6 @@
 corpus:
-  input: '../effect-extraction/data/raw/patents_from_B23B.csv'
-  use_col: 'contents'
-  output: 'data/corpus_sudachi.txt'
+  input: '../public_data/random_patents_100000.pkl'
+  use_col: 'content'
+  output: 'data/tfidf_corpus_using_sudachiA.txt'
   use_field: ['ab', 'cl', 'de']
   n_jobs: -1

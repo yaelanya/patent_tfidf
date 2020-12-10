@@ -47,7 +47,7 @@ def main(args):
         param = yaml.safe_load(f)['corpus']
 
     patents = load_input_file(param['input'], param['use_col'])
-    patents = preprocessing(patents[:10])
+    patents = preprocessing(patents)
     print(f'Number of patents:', len(patents))
 
     tokenizer_obj = Tokenizer(with_pos=True)

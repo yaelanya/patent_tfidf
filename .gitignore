@@ -1,0 +1,10 @@
+__pycache__/
+.ipynb_checkpoints/
+
+data/
+output/
+
+*.ipynb
+
+.vscode/
+.DS_Store

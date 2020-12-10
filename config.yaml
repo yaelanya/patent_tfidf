@@ -1,0 +1,6 @@
+corpus:
+  input: '../effect-extraction/data/raw/patents_from_B23B.csv'
+  use_col: 'contents'
+  output: 'data/corpus_sudachi.txt'
+  use_field: ['ab', 'cl', 'de']
+  n_jobs: -1

@@ -54,7 +54,10 @@ def main(args):
     result = Parallel(n_jobs=param['n_jobs'], verbose=1)([delayed(tokenizer_obj.tokenize_lines)(patent) for patent in patents])
 
     with open(param['output'], 'w') as f:
-        f.write('\n'.join(['\t'.join(flatten(doc)) for doc in result]))
+        for doc in result:
+            # joining sentences of a patent
+            dump = '\t'.join(flatten(doc)) + '\n'
+            f.write(dump)
 
 
 def load_input_file(filepath, use_col=None):

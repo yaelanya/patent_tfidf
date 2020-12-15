@@ -37,11 +37,12 @@ def main(args):
 def load_tokenized_file(filepath, pos=['名詞']):
     filtered_tokens = []
     with open(filepath, 'r') as f:
-        parsed_patents = f.readline()
-        for doc in tqdm(parsed_patents):
-            for tokens in doc.strip().split('\t'):
-                filtered_tokens.append(filter_pos(tokens, pos))
-
+        line = f.readline()
+        while line:
+            tokens = line.strip().split('\t')
+            filtered_tokens += [filter_pos(tokens, pos)]
+            line = f.readline()
+            
     return filtered_tokens
 
 

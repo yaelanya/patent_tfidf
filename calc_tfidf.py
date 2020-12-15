@@ -38,7 +38,7 @@ def load_tokenized_file(filepath, pos=['名詞']):
     filtered_tokens = []
     with open(filepath, 'r') as f:
         line = f.readline()
-        while line:
+        while tqdm(line):
             tokens = line.strip().split('\t')
             filtered_tokens += [filter_pos(tokens, pos)]
             line = f.readline()

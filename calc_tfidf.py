@@ -38,7 +38,7 @@ def load_tokenized_file(filepath, pos=['名詞']):
     filtered_tokens = []
     with open(filepath, 'r') as f:
         line = f.readline()
-        while tqdm(line):
+        while line:
             tokens = line.strip().split('\t')
             filtered_tokens += [filter_pos(tokens, pos)]
             line = f.readline()
@@ -51,7 +51,11 @@ def filter_pos(tokens, pos):
 
     filtered_tokens = []
     for token in tokens:
-        token_text, token_pos = token.split('###')
+        try:
+            token_text, token_pos = token.split('###')
+        except:
+            continue
+
         if regex.search(pos_patt, token_pos):
             filtered_tokens.append(token_text)
     

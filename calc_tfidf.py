@@ -51,11 +51,7 @@ def filter_pos(tokens, pos):
 
     filtered_tokens = []
     for token in tokens:
-        try:
-            token_text, token_pos = token.split('###')
-        except:
-            continue
-
+        token_text, token_pos = token.split('###')
         if regex.search(pos_patt, token_pos):
             filtered_tokens.append(token_text)
     

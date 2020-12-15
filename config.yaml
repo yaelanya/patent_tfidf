@@ -4,3 +4,9 @@ corpus:
   output: 'data/tfidf_corpus_using_sudachiA.txt'
   use_field: ['ab', 'cl', 'de']
   n_jobs: -1
+
+calc:
+  input: 'data/tfidf_corpus_using_sudachiA.txt'
+  pos: ['名詞', '動詞', '形容詞', '形状詞']
+  output_dict: 'model/tfidf_dictionary.pkl'
+  output_model: 'model/tfidf_model.pkl'
